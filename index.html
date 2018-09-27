@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Alexandre Louot"/>
+    <title>Alexandre Louot - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="altBG"></div>
+    <script src="js/triangles.js"></script>
+    <script>
+      setTimeout(function(){
+        var canvas = document.getElementById("canvas");
+    var H = window.document.body.offsetHeight;
+    var W = window.document.body.offsetWidth;
+    canvas.setAttribute('width',W);
+    canvas.setAttribute('height',H);
+    var altBG = document.getElementById("altBG");
+    var triangle = new TriangleBG({
+       canvas : canvas,
+       alternateElem : altBG,
+       cellHeight : 120,
+       cellWidth : 100,
+       mouseLight : true,
+       mouseLightRadius : 500,
+       mouseLightIncrement : 10,
+       resizeAdjustment : true,
+       variance : 1.3,
+       pattern : "x*y",
+       baseColor1 : {
+          baseHue : 120,
+          baseSaturation : 60,
+          baseLightness : 38
+       },
+       baseColor2 : {
+          baseHue : 120,
+          baseSaturation : 60,
+          baseLightness : 40
+       },
+       colorDelta : {
+          hue : 1,
+          lightness : 0,
+          saturation : 0
+       }
+     });
+      }, 100);
+   
+    </script>
+    <header>
+            <div class="cubetop">
+                <h1 class="monnom">Alexandre Louot</h1>
+                <h2 class="petiteinfo">Développeur Web Full-Stack</h2>
+            </div>
+            <nav class="manav">
+                <ul class="navbar">   
+                    <li><a href="#"><   &nbsp;&nbsp; Présentation</a></li>
+                    <li><a href="#">Compétences</a></li>
+                    <li><a href="#">réalisations</a></li>
+                    <li><a href="#">Contacts &nbsp;&nbsp; /></a></li> 
+                </ul>                
+            </nav>
+    </header>
+    <div class="present">
+        <h2 class="soustitre">Présentation</h2>
+            <div class="petitcube">
+                <div class="etudes">
+                     Mes etudes <br/><br/>Après avoir obtenu mon Baccalauréat avec mention j'ai trouvé un intérêt important pour l'informatique. Je suis actuellement étudiant en deuxième année au sein du DUT Métiers du Multimédia et de l'Internet (MMI) de Haguenau où j'apprends à maîtriser les langages de programmation dans le but de devenir un développeur WEB.    
+                </div>
+                <div class="passions">
+                    Mes passions <br/><br/>Passionné par l'informatique, en quête de nouvelles connaissances, je suis interessé par les nouvelles technologies, je suis polyvalent, motivé et détérminé dans mes projets, je pratique du sport (Parkour et Musculation), j'aime la Pizza et j'ai le Permis B.
+                </div>
+                <div class="skills">
+                    Mes compétences <br/><br/>Jeune et autodidacte, pratiquant le développement web lors de mes temps libres, je développe notamment mes compétences grâces aux outils tels que: React, React Native, PHP, MySQL, JavaScript, Ajax, HTML ou encore le CSS.
+                </div>
+            </div>
+    </div>
+    <div class="cv">
+            <img src="image/inthermath-logo.png"/>
+    </div>
+    <div class="reali">
+        <h2 class="titrerea">Mes réalisations</h2>
+        <div class="cuberea">
+            <div class="real1">
+                <img src="image/inthermath-logo.png"/>    
+            </div>
+            <div class="real2">
+                <img src="image/inthermath-logo.png"/>
+            </div>
+            <div class="real3">
+                <img src="image/inthermath-logo.png"/>
+            </div>
+          </div>
+    </div>
+    <div class="competences">
+        <h2 class="titrecomp">Mes niveaux de compétences</h2>
+        <h2 class="soustitrejauge">{ Languages }</h2>
+        <div class="grosgroupe">
+        <div class="videjauge"></div>
+        <div class="groupe">
+            <h3 class="jaugehtml">HTML</h3>
+            <div class="jauge1">
+                <div id="Bar1" class="barreprogression barreslash" style="width:1%">1%</div>
+              </div>
+              <br>
+              <button class="w3-button w3-green lancement" onclick="move1()">Cliquez</button> 
+              
+              <script>
+              function move1() {
+                var elem = document.getElementById("Bar1");   
+                var width = 1;
+                var id = setInterval(frame, 25);
+                function frame() {
+                  if (width >= 92) {
+                    clearInterval(id);
+                  } else {
+                    width++; 
+                    elem.style.width = width + '%'; 
+                    elem.innerHTML = width * 1  + '%';
+                  }
+                }
+              }
+              </script>
+              <h3 class="jaugecss">CSS</h3>
+              <div class="jauge2">
+                  <div id="Bar2" class="barreprogression barreslash" style="width:1%">1%</div>
+                </div>
+                <br>
+                <button class="w3-button w3-green lancement" onclick="move2()">Cliquez</button> 
+                
+                <script>
+                function move2() {
+                  var elem = document.getElementById("Bar2");   
+                  var width = 1;
+                  var id = setInterval(frame, 25);
+                  function frame() {
+                    if (width >= 73) {
+                      clearInterval(id);
+                    } else {
+                      width++; 
+                      elem.style.width = width + '%'; 
+                      elem.innerHTML = width * 1  + '%';
+                    }
+                  }
+                }
+                </script>
+                <h3 class="jaugejavascript">JavaScript</h3>
+                <div class="jauge3">
+                    <div id="Bar3" class="barreprogression barreslash" style="width:1%">1%</div>
+                  </div>
+                  <br>
+                  <button class="w3-button w3-green lancement" onclick="move3()">Cliquez</button>
+                  
+                  <script>
+                  function move3() {
+                    var elem = document.getElementById("Bar3");   
+                    var width = 1;
+                    var id = setInterval(frame, 25);
+                    function frame() {
+                      if (width >= 51) {
+                        clearInterval(id);
+                      } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        elem.innerHTML = width * 1  + '%';
+                      }
+                    }
+                  }
+                  </script>
+                  <h3 class="jaugephp">PHP</h3>
+                  <div class="jauge4">
+                      <div id="Bar4" class="barreprogression barreslash" style="width:1%">1%</div>
+                    </div>
+                    <br>
+                    <button class="w3-button w3-green lancement" onclick="move4()">Cliquez</button>
+                    
+                    <script>
+                    function move4() {
+                      var elem = document.getElementById("Bar4");   
+                      var width = 1;
+                      var id = setInterval(frame, 25);
+                      function frame() {
+                        if (width >= 64) {
+                          clearInterval(id);
+                        } else {
+                          width++; 
+                          elem.style.width = width + '%'; 
+                          elem.innerHTML = width * 1  + '%';
+                        }
+                      }
+                    }
+                    </script>
+        <h2 class="soustitrejauge1">Langues</h2>
+        <h3 class="jaugefr">Francais</h3>
+        <div class="jauge5">
+            <div id="Bar5" class="barreprogression barreslash" style="width:1%">1%</div>
+          </div>
+          <br>
+          <button class="w3-button w3-green lancement" onclick="move5()">Cliquez</button> 
+          
+          <script>
+          function move5() {
+            var elem = document.getElementById("Bar5");   
+            var width = 1;
+            var id = setInterval(frame, 25);
+            function frame() {
+              if (width >= 99) {
+                clearInterval(id);
+              } else {
+                width++; 
+                elem.style.width = width + '%'; 
+                elem.innerHTML = width * 1  + '%';
+              }
+            }
+          }
+          </script>
+          <h3 class="jaugeang">Anglais</h3>
+          <div class="jauge6">
+              <div id="Bar6" class="barreprogression barreslash" style="width:1%">1%</div>
+            </div>
+            <br>
+            <button class="w3-button w3-green lancement" onclick="move6()">Cliquez</button> 
+            
+            <script>
+            function move6() {
+              var elem = document.getElementById("Bar6");   
+              var width = 1;
+              var id = setInterval(frame, 25);
+              function frame() {
+                if (width >= 65) {
+                  clearInterval(id);
+                } else {
+                  width++; 
+                  elem.style.width = width + '%'; 
+                  elem.innerHTML = width * 1  + '%';
+                }
+              }
+            }
+            </script>
+        </div>
+      </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="vide"></div>
+                <div class="maphoto">
+                    <img src="image/inthermath-logo.png"/>   
+                    <p class="infos">Ville <br/> Bordeaux <br/><br/><br/> Mail <br/> toto@gmail.com</p>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>
